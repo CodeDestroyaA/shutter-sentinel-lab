@@ -12,7 +12,7 @@ const Footer = () => {
               CENTURY <span className="text-primary">DOORS</span>
             </span>
             <p className="font-body text-secondary-foreground/60 mt-4 leading-relaxed">
-              Your local experts in physical security and automation. Proudly serving the East Rand with quality workmanship.
+              Your local specialists in industrial and residential roller shutter solutions. Proudly serving the East Rand with quality workmanship.
             </p>
           </div>
 
@@ -22,9 +22,9 @@ const Footer = () => {
             <nav className="flex flex-col gap-3">
               {[
                 { label: "Home", href: "/" },
-                { label: "Roller Shutters", href: "/services/roller-shutters" },
-                { label: "Repairs", href: "/services/repairs" },
-                { label: "Gate Motors", href: "/services/gate-motors" },
+                { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
+                { label: "Repairs & Maintenance", href: "/services/repairs" },
+                { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <Link key={link.href} to={link.href} className="font-body text-secondary-foreground/60 hover:text-primary transition-colors">
                   {link.label}

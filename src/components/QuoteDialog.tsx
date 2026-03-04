@@ -18,7 +18,6 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
     setTimeout(() => {
       setLoading(false);
       onOpenChange(false);
@@ -48,10 +47,9 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <SelectValue placeholder="Service Required" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="shutter-install">Roller Shutter Install</SelectItem>
-              <SelectItem value="shutter-repair">Roller Shutter Repair</SelectItem>
-              <SelectItem value="gate-motor">Gate Motor Install / Repair</SelectItem>
-              <SelectItem value="general">General Inquiry</SelectItem>
+              <SelectItem value="shutter-install">New Roller Shutter Installation</SelectItem>
+              <SelectItem value="shutter-repair">Emergency Shutter Repair</SelectItem>
+              <SelectItem value="maintenance">General Maintenance/Service</SelectItem>
             </SelectContent>
           </Select>
 
