@@ -12,7 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const serviceData: Record<string, { title: string; description: string; details: string[]; faqs: { q: string; a: string }[] }> = {
   "roller-shutters": {
     title: "Roller Shutter Installations",
-    description: "High-grade steel and aluminium options tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and industrial premises across the East Rand.",
+    description: "High-grade steel and aluminium options tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties across the East Rand.",
     details: [
       "Custom measurements and fabrication",
       "Steel and aluminium options available",
@@ -27,7 +27,7 @@ const serviceData: Record<string, { title: string; description: string; details:
   },
   repairs: {
     title: "Shutter Repairs & Maintenance",
-    description: "Emergency repairs to ensure your business is never left vulnerable. Quick fixes for jammed, rusted, or noisy shutters to keep your day moving smoothly.",
+    description: "Emergency repairs to ensure your property is never left vulnerable. Quick fixes for jammed, rusted, or noisy shutters to keep your day moving smoothly.",
     details: [
       "Emergency after-hours service",
       "Spring and motor replacements",
@@ -38,21 +38,6 @@ const serviceData: Record<string, { title: string; description: string; details:
     faqs: [
       { q: "Do you offer emergency after-hours repairs?", a: "Yes, we understand security can't wait. Contact us for urgent assistance any time." },
       { q: "How often should I service my roller shutter?", a: "We recommend annual maintenance to prevent costly breakdowns and extend the lifespan of your shutter." },
-    ],
-  },
-  "gate-motors": {
-    title: "Gate Motor Solutions",
-    description: "We specialise in leading brands like Centurion to ensure your driveway is both secure and convenient. New installs, motor health checks, and reliable automation for sliding and swing gates.",
-    details: [
-      "Centurion and other top brands",
-      "Sliding and swing gate motors",
-      "Battery backup systems",
-      "Intercom and access control integration",
-      "Diagnostics and motor replacements",
-    ],
-    faqs: [
-      { q: "My gate is moving slowly; do I need a new motor?", a: "Not necessarily! It could be a battery issue or track obstruction. We'll diagnose it first to save you costs." },
-      { q: "Can you integrate my gate motor with an intercom?", a: "Absolutely. We offer full intercom and access control integration with most gate motor systems." },
     ],
   },
 };

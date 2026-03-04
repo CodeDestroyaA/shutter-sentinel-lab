@@ -1,25 +1,19 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Lock, Wrench, Zap } from "lucide-react";
+import { ArrowRight, Lock, Wrench } from "lucide-react";
 
 const services = [
   {
     icon: Lock,
     title: "Roller Shutter Installations",
-    description: "Custom-fit, heavy-duty security for shopfronts and warehouses. High-grade steel and aluminium options tailored to your dimensions.",
+    description: "Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties. High-grade steel and aluminium options tailored to your exact dimensions.",
     href: "/services/roller-shutters",
   },
   {
     icon: Wrench,
-    title: "Expert Repairs",
+    title: "Repairs & Maintenance",
     description: "Quick fixes for jammed, rusted, or noisy shutters to keep your day moving. Emergency service available when security can't wait.",
     href: "/services/repairs",
-  },
-  {
-    icon: Zap,
-    title: "Gate Motor Solutions",
-    description: "Reliable automation for sliding and swing gates. New installs, motor health checks, and leading brand specialists.",
-    href: "/services/gate-motors",
   },
 ];
 
@@ -38,7 +32,7 @@ const ServicesSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">Our Services</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

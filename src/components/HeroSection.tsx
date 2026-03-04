@@ -12,7 +12,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroImage} alt="Industrial roller shutter door at sunset" className="w-full h-full object-cover" />
+        <img src={heroImage} alt="Industrial roller shutter door" className="w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       </div>
 
@@ -25,7 +25,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
         >
           <div className="flex items-center gap-3 mb-6">
             <Shield className="w-5 h-5 text-primary" />
-            <span className="font-display text-sm tracking-[0.3em] text-primary">KEMPTON PARK'S SECURITY EXPERTS</span>
+            <span className="font-display text-sm tracking-[0.3em] text-primary">KEMPTON PARK'S ROLLER SHUTTER SPECIALISTS</span>
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6">
@@ -35,7 +35,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
           </h1>
 
           <p className="font-body text-lg md:text-xl text-secondary-foreground/70 max-w-xl mb-10 leading-relaxed">
-            We don't just install shutters and motors — we deliver peace of mind. Precision engineering with a neighbourly touch, serving the East Rand since day one.
+            Industrial and residential roller shutter specialists — delivering peace of mind with precision engineering and a neighbourly touch across the East Rand.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
