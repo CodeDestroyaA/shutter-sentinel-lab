@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Shield, Wrench } from "lucide-react";
+import { ArrowLeft, MapPin, Shield, Wrench, DoorOpen, Layers } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -77,7 +77,7 @@ const AreaPage = () => {
               <span className="font-display text-sm tracking-[0.3em] text-primary">SERVICE AREA</span>
             </div>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-secondary-foreground mb-6">
-              Roller Shutters in {area.name}
+              Entrance Solutions in {area.name}
             </h1>
             <p className="font-body text-lg text-secondary-foreground/70 max-w-2xl leading-relaxed">{area.description}</p>
           </motion.div>
@@ -89,32 +89,27 @@ const AreaPage = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">Our Services in {area.name}</h2>
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
-              <Link
-                to="/services/roller-shutters"
-                className="group flex items-start gap-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-card-foreground mb-1">Installation</h3>
-                  <p className="font-body text-sm text-muted-foreground">Custom roller shutter installations for commercial and residential properties.</p>
-                </div>
-              </Link>
-              <Link
-                to="/services/repairs"
-                className="group flex items-start gap-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                  <Wrench className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-card-foreground mb-1">Repairs & Maintenance</h3>
-                  <p className="font-body text-sm text-muted-foreground">Emergency repairs and scheduled maintenance to keep you secure.</p>
-                </div>
-              </Link>
+              {[
+                { href: "/services/roller-shutters", icon: Shield, title: "Roller Shutters", desc: "Custom roller shutter installations for commercial and residential properties." },
+                { href: "/services/repairs", icon: Wrench, title: "Repairs & Maintenance", desc: "Emergency repairs and scheduled maintenance to keep you secure." },
+                { href: "/services/garage-doors", icon: DoorOpen, title: "Garage Doors", desc: "Professional garage door installations — tip-up, roll-up, and automated." },
+                { href: "/services/sectional-doors", icon: Layers, title: "Sectional Doors", desc: "Insulated sectional overhead doors for warehouses and homes." },
+              ].map((svc) => (
+                <Link
+                  key={svc.href}
+                  to={svc.href}
+                  className="group flex items-start gap-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
+                  style={{ boxShadow: "var(--shadow-card)" }}
+                >
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                    <svc.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold text-card-foreground mb-1">{svc.title}</h3>
+                    <p className="font-body text-sm text-muted-foreground">{svc.desc}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
             <Button onClick={() => setQuoteOpen(true)} className="font-display tracking-wider">
               Get a Free Quote in {area.name}
