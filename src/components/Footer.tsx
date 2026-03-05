@@ -42,7 +42,7 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-3 text-secondary-foreground/60">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <span className="font-body">Serving Kempton Park &amp; Surrounds</span>
+                <span className="font-body">Serving Gauteng — East Rand &amp; Beyond</span>
               </div>
               <a href="tel:+27631843578" className="flex items-center gap-3 text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary shrink-0" />

@@ -12,7 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const serviceData: Record<string, { title: string; description: string; details: string[]; faqs: { q: string; a: string }[] }> = {
   "roller-shutters": {
     title: "Roller Shutter Installations",
-    description: "High-grade steel and aluminium options tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties across the East Rand.",
+    description: "High-grade steel and aluminium options tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties across Gauteng.",
     details: [
       "Custom measurements and fabrication",
       "Steel and aluminium options available",
@@ -38,6 +38,36 @@ const serviceData: Record<string, { title: string; description: string; details:
     faqs: [
       { q: "Do you offer emergency after-hours repairs?", a: "Yes, we understand security can't wait. Contact us for urgent assistance any time." },
       { q: "How often should I service my roller shutter?", a: "We recommend annual maintenance to prevent costly breakdowns and extend the lifespan of your shutter." },
+    ],
+  },
+  "garage-doors": {
+    title: "Garage Door Installation",
+    description: "Professional garage door installations for residential and commercial properties. We supply and fit tip-up, roll-up, and fully automated garage doors built to last.",
+    details: [
+      "Tip-up and roll-up door options",
+      "Automated opener installation",
+      "Steel, aluminium, and wooden finishes",
+      "Insulated options for energy efficiency",
+      "Full warranty and after-sales support",
+    ],
+    faqs: [
+      { q: "What types of garage doors do you install?", a: "We install tip-up, roll-up, and sectional garage doors in steel, aluminium, and wood finishes." },
+      { q: "Can you automate my existing garage door?", a: "In most cases, yes. We'll assess your current door and recommend the best motor and automation solution." },
+    ],
+  },
+  "sectional-doors": {
+    title: "Sectional Doors Installation",
+    description: "Insulated sectional overhead doors ideal for warehouses, showrooms, and residential garages. Space-saving vertical operation with excellent thermal performance.",
+    details: [
+      "Insulated sandwich panel construction",
+      "Vertical lift, standard lift, or high lift options",
+      "Manual and motorised operation",
+      "Weather-sealed for energy efficiency",
+      "Custom sizes and colour options",
+    ],
+    faqs: [
+      { q: "What is the advantage of a sectional door over a roller shutter?", a: "Sectional doors offer better insulation, quieter operation, and a more finished aesthetic — ideal for showrooms and temperature-sensitive environments." },
+      { q: "How much headroom is required?", a: "Standard installations require about 300mm of headroom. We offer low-headroom solutions for tighter spaces." },
     ],
   },
 };
