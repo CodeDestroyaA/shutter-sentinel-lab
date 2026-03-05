@@ -25,7 +25,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
         >
           <div className="flex items-center gap-3 mb-6">
             <Shield className="w-5 h-5 text-primary" />
-            <span className="font-display text-sm tracking-[0.3em] text-primary">KEMPTON PARK'S ROLLER SHUTTER SPECIALISTS</span>
+            <span className="font-display text-sm tracking-[0.3em] text-primary">GAUTENG'S ENTRANCE SOLUTION SPECIALISTS</span>
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6">
@@ -35,7 +35,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
           </h1>
 
           <p className="font-body text-lg md:text-xl text-secondary-foreground/70 max-w-xl mb-10 leading-relaxed">
-            Industrial and residential roller shutter specialists — delivering peace of mind with precision engineering and a neighbourly touch across the East Rand.
+            Industrial and residential entrance solution specialists — roller shutters, garage doors, and sectional doors. Tough as steel, with a neighbourly touch across Gauteng.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
               asChild
               className="font-display text-base tracking-wider px-8 py-6 border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10 hover:text-secondary-foreground"
             >
-              <a href="tel:+27000000000">Call Now</a>
+              <a href="tel:+27631843578">Call Now</a>
             </Button>
           </div>
         </motion.div>

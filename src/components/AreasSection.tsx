@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-const areas = ["Kempton Park", "Isando", "Jet Park", "Spartan", "Edenvale", "Boksburg"];
+const areas = ["Kempton Park", "Isando", "Jet Park", "Spartan", "Edenvale", "Bedfordview", "Benoni", "Boksburg", "Sandton", "Midrand", "Centurion"];
 
 const AreasSection = () => {
   return (
@@ -15,7 +15,7 @@ const AreasSection = () => {
           className="text-center mb-12"
         >
           <span className="font-display text-sm tracking-[0.3em] text-primary mb-4 block">SERVICE AREAS</span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground">Proudly Serving the East Rand</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground">Proudly Serving Gauteng</h2>
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-4">

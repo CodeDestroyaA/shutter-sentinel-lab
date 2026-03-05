@@ -1,19 +1,31 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Lock, Wrench } from "lucide-react";
+import { ArrowRight, Lock, Wrench, DoorOpen, Layers } from "lucide-react";
 
 const services = [
   {
     icon: Lock,
     title: "Roller Shutter Installations",
-    description: "Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties. High-grade steel and aluminium options tailored to your exact dimensions.",
+    description: "Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties. High-grade steel and aluminium options.",
     href: "/services/roller-shutters",
   },
   {
     icon: Wrench,
     title: "Repairs & Maintenance",
-    description: "Quick fixes for jammed, rusted, or noisy shutters to keep your day moving. Emergency service available when security can't wait.",
+    description: "Quick fixes for jammed, rusted, or noisy shutters. Emergency service available when security can't wait.",
     href: "/services/repairs",
+  },
+  {
+    icon: DoorOpen,
+    title: "Garage Door Installation",
+    description: "Professional garage door installations for residential and commercial properties. Tip-up, roll-up, and automated options.",
+    href: "/services/garage-doors",
+  },
+  {
+    icon: Layers,
+    title: "Sectional Doors Installation",
+    description: "Insulated sectional overhead doors for warehouses, showrooms, and homes. Space-saving and thermally efficient.",
+    href: "/services/sectional-doors",
   },
 ];
 
@@ -32,7 +44,7 @@ const ServicesSection = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">Our Services</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
