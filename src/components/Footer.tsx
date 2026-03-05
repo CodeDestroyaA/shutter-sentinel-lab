@@ -12,7 +12,7 @@ const Footer = () => {
               CENTURY <span className="text-primary">DOORS</span>
             </span>
             <p className="font-body text-secondary-foreground/60 mt-4 leading-relaxed">
-              Your local specialists in industrial and residential roller shutter solutions. Proudly serving the East Rand with quality workmanship.
+              Century Doors: South Africa's premier choice for industrial and residential entrance solutions. Serving Gauteng with 24/7 reliability.
             </p>
           </div>
 
@@ -24,6 +24,9 @@ const Footer = () => {
                 { label: "Home", href: "/" },
                 { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
                 { label: "Repairs & Maintenance", href: "/services/repairs" },
+                { label: "Garage Doors", href: "/services/garage-doors" },
+                { label: "Sectional Doors", href: "/services/sectional-doors" },
+                { label: "Gallery", href: "/gallery" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <Link key={link.href} to={link.href} className="font-body text-secondary-foreground/60 hover:text-primary transition-colors">
@@ -41,9 +44,9 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
                 <span className="font-body">Serving Kempton Park &amp; Surrounds</span>
               </div>
-              <a href="tel:+27000000000" className="flex items-center gap-3 text-secondary-foreground/60 hover:text-primary transition-colors">
+              <a href="tel:+27631843578" className="flex items-center gap-3 text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <span className="font-body">+27 (0) 00 000 0000</span>
+                <span className="font-body">+27 63 184 3578</span>
               </a>
               <a href="mailto:info@centurydoors.co.za" className="flex items-center gap-3 text-secondary-foreground/60 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary shrink-0" />

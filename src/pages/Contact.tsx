@@ -9,8 +9,8 @@ const Contact = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
 
   const info = [
-    { icon: MapPin, label: "Location", value: "Serving Kempton Park & Surrounds" },
-    { icon: Phone, label: "Phone", value: "+27 (0) 00 000 0000", href: "tel:+27000000000" },
+    { icon: MapPin, label: "Location", value: "Serving Gauteng — East Rand & Beyond" },
+    { icon: Phone, label: "Phone", value: "+27 63 184 3578", href: "tel:+27631843578" },
     { icon: Mail, label: "Email", value: "info@centurydoors.co.za", href: "mailto:info@centurydoors.co.za" },
     { icon: Clock, label: "Hours", value: "Mon–Fri 7am–5pm, Sat 8am–1pm" },
   ];

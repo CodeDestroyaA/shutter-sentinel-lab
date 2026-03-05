@@ -10,13 +10,37 @@ interface HeaderProps {
 const serviceItems = [
   { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
   { label: "Repairs & Maintenance", href: "/services/repairs" },
+  { label: "Garage Door Installation", href: "/services/garage-doors" },
+  { label: "Sectional Doors Installation", href: "/services/sectional-doors" },
 ];
 
-const areaItems = [
-  { label: "Kempton Park", href: "/areas/kempton-park" },
-  { label: "Isando", href: "/areas/isando" },
-  { label: "Jet Park", href: "/areas/jet-park" },
-  { label: "Spartan", href: "/areas/spartan" },
+const areaGroups = [
+  {
+    heading: "Local Hubs",
+    items: [
+      { label: "Kempton Park", href: "/areas/kempton-park" },
+      { label: "Isando", href: "/areas/isando" },
+      { label: "Jet Park", href: "/areas/jet-park" },
+      { label: "Spartan", href: "/areas/spartan" },
+    ],
+  },
+  {
+    heading: "Expansion Areas",
+    items: [
+      { label: "Edenvale", href: "/areas/edenvale" },
+      { label: "Bedfordview", href: "/areas/bedfordview" },
+      { label: "Benoni", href: "/areas/benoni" },
+      { label: "Boksburg", href: "/areas/boksburg" },
+    ],
+  },
+  {
+    heading: "Gauteng Powerhouses",
+    items: [
+      { label: "Sandton", href: "/areas/sandton" },
+      { label: "Midrand", href: "/areas/midrand" },
+      { label: "Centurion", href: "/areas/centurion" },
+    ],
+  },
 ];
 
 const Header = ({ onQuoteClick }: HeaderProps) => {
@@ -59,25 +83,34 @@ const Header = ({ onQuoteClick }: HeaderProps) => {
             </div>
           </div>
 
-          {/* Areas Dropdown */}
+          {/* Areas Mega Dropdown */}
           <div className="relative group">
             <button className="font-display text-sm tracking-widest text-secondary-foreground/80 hover:text-primary transition-colors flex items-center gap-1">
               Areas <ChevronDown className="w-3 h-3" />
             </button>
-            <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="bg-secondary border border-secondary-foreground/10 rounded-lg p-2 min-w-[200px] shadow-lg">
-                {areaItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className="block px-4 py-2.5 rounded-md font-body text-sm text-secondary-foreground/70 hover:text-primary hover:bg-secondary-foreground/5 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+            <div className="absolute top-full right-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-secondary border border-secondary-foreground/10 rounded-lg p-4 min-w-[480px] shadow-lg grid grid-cols-3 gap-4">
+                {areaGroups.map((group) => (
+                  <div key={group.heading}>
+                    <span className="font-display text-xs tracking-[0.2em] text-primary mb-2 block">{group.heading}</span>
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="block px-2 py-1.5 rounded-md font-body text-sm text-secondary-foreground/70 hover:text-primary hover:bg-secondary-foreground/5 transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>
           </div>
+
+          <Link to="/gallery" className="font-display text-sm tracking-widest text-secondary-foreground/80 hover:text-primary transition-colors">
+            Gallery
+          </Link>
 
           <Link to="/contact" className="font-display text-sm tracking-widest text-secondary-foreground/80 hover:text-primary transition-colors">
             Contact
@@ -85,7 +118,7 @@ const Header = ({ onQuoteClick }: HeaderProps) => {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <a href="tel:+27000000000" className="flex items-center gap-2 text-secondary-foreground/80 hover:text-primary transition-colors">
+          <a href="tel:+27631843578" className="flex items-center gap-2 text-secondary-foreground/80 hover:text-primary transition-colors">
             <Phone className="w-4 h-4" />
             <span className="font-body text-sm font-semibold">Call Us</span>
           </a>
@@ -138,13 +171,22 @@ const Header = ({ onQuoteClick }: HeaderProps) => {
             </button>
             {areasOpen && (
               <div className="pl-4 flex flex-col gap-1">
-                {areaItems.map((item) => (
-                  <Link key={item.href} to={item.href} onClick={() => setMobileOpen(false)} className="font-body text-sm text-secondary-foreground/60 hover:text-primary transition-colors py-1.5">
-                    {item.label}
-                  </Link>
+                {areaGroups.map((group) => (
+                  <div key={group.heading}>
+                    <span className="font-display text-xs tracking-[0.15em] text-primary mt-2 mb-1 block">{group.heading}</span>
+                    {group.items.map((item) => (
+                      <Link key={item.href} to={item.href} onClick={() => setMobileOpen(false)} className="font-body text-sm text-secondary-foreground/60 hover:text-primary transition-colors py-1.5">
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             )}
+
+            <Link to="/gallery" onClick={() => setMobileOpen(false)} className="font-display text-sm tracking-widest text-secondary-foreground/80 hover:text-primary transition-colors py-2">
+              Gallery
+            </Link>
 
             <Link to="/contact" onClick={() => setMobileOpen(false)} className="font-display text-sm tracking-widest text-secondary-foreground/80 hover:text-primary transition-colors py-2">
               Contact

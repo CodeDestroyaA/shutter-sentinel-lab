@@ -47,9 +47,10 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <SelectValue placeholder="Service Required" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="shutter-install">New Roller Shutter Installation</SelectItem>
-              <SelectItem value="shutter-repair">Emergency Shutter Repair</SelectItem>
-              <SelectItem value="maintenance">General Maintenance/Service</SelectItem>
+              <SelectItem value="shutter-install">Roller Shutter Install</SelectItem>
+              <SelectItem value="shutter-repair">Shutter Repair</SelectItem>
+              <SelectItem value="garage-door">Garage Door Install</SelectItem>
+              <SelectItem value="sectional-door">Sectional Door Install</SelectItem>
             </SelectContent>
           </Select>
 
@@ -62,6 +63,13 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <SelectItem value="isando">Isando</SelectItem>
               <SelectItem value="jet-park">Jet Park</SelectItem>
               <SelectItem value="spartan">Spartan</SelectItem>
+              <SelectItem value="edenvale">Edenvale</SelectItem>
+              <SelectItem value="bedfordview">Bedfordview</SelectItem>
+              <SelectItem value="benoni">Benoni</SelectItem>
+              <SelectItem value="boksburg">Boksburg</SelectItem>
+              <SelectItem value="sandton">Sandton</SelectItem>
+              <SelectItem value="midrand">Midrand</SelectItem>
+              <SelectItem value="centurion">Centurion</SelectItem>
               <SelectItem value="other">Other</SelectItem>
             </SelectContent>
           </Select>
