@@ -8,50 +8,61 @@ import Footer from "@/components/Footer";
 import QuoteDialog from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
 
-const areaData: Record<string, { name: string; description: string }> = {
+const areaData: Record<string, { name: string; description: string; suburbs: string[] }> = {
   "kempton-park": {
     name: "Kempton Park",
     description: "As Kempton Park's trusted entrance solution specialists, we've been securing businesses and homes across the area for years. From OR Tambo industrial parks to residential estates, we deliver expert installation and reliable repairs.",
+    suburbs: ["Birch Acres", "Aston Manor", "Norkem Park", "Allen Grove", "Pomona", "Glen Marais", "Bredell", "Terenure", "Van Riebeeck Park", "Crystal Park", "Bonaero Park"],
   },
   isando: {
     name: "Isando",
     description: "Isando's industrial hub demands heavy-duty security solutions. We provide custom roller shutter, garage door, and sectional door installations plus rapid-response repairs for warehouses, factories, and commercial premises.",
+    suburbs: ["Isando Industrial", "Elandsfontein", "Meadowdale", "Greenfields", "Sebenza", "Hughes", "Esselen Park"],
   },
   "jet-park": {
     name: "Jet Park",
     description: "Jet Park businesses rely on Century Doors for robust entrance security. We understand the unique needs of this industrial precinct and deliver tailored solutions with minimal disruption.",
+    suburbs: ["Jet Park Industrial", "Founders Hill", "Elma Park", "Serengeti Estate", "Bartlett", "Roodekop"],
   },
   spartan: {
     name: "Spartan",
     description: "Serving the Spartan industrial and residential community with professional roller shutter, garage door, and sectional door installations. Fast response times and quality workmanship you can count on.",
+    suburbs: ["Spartan Industrial", "Eastleigh", "Atlasville", "Klipfontein View", "Cresslawn", "Sunward Park"],
   },
   edenvale: {
     name: "Edenvale",
     description: "Century Doors brings premium entrance solutions to Edenvale's residential and commercial properties. From automated garage doors to industrial roller shutters, we've got Edenvale covered.",
+    suburbs: ["Greenstone Hill", "Modderfontein", "Lethabong", "Eden Glen", "Dowerglen", "Eastleigh", "Van Riebeeck Park", "Meadowbrook"],
   },
   bedfordview: {
     name: "Bedfordview",
     description: "Bedfordview's upmarket homes and business parks deserve top-tier entrance solutions. We deliver stylish, secure garage doors and heavy-duty roller shutters across the area.",
+    suburbs: ["Bedfordview Central", "Kloof Road", "Van Buuren", "Gillooly's View", "Eastgate", "Sunward Park", "Germiston South"],
   },
   benoni: {
     name: "Benoni",
     description: "From the Lake District to the industrial zones, Benoni trusts Century Doors for reliable roller shutter installations, garage doors, and emergency repair services.",
+    suburbs: ["Northmead", "Farrarmere", "Rynfield", "Lakefield", "Kleinfontein", "Norton", "Benoni Central", "Brentwood Park", "Airfield"],
   },
   boksburg: {
     name: "Boksburg",
     description: "Century Doors is proud to serve Boksburg with professional roller shutter and garage door solutions. Industrial, commercial, and residential — we do it all.",
+    suburbs: ["Boksburg North", "Reiger Park", "Sunward Park", "Bardene", "Parkrand", "Witfield", "Ravenswood", "Cason", "Impala Park"],
   },
   sandton: {
     name: "Sandton",
     description: "Africa's richest square mile deserves Africa's best entrance solutions. Century Doors provides premium installations and maintenance across Sandton's commercial and residential landscape.",
+    suburbs: ["Sandhurst", "Morningside", "Rivonia", "Bryanston", "Fourways", "Lonehill", "Woodmead", "Sunninghill", "Paulshof", "Benmore"],
   },
   midrand: {
     name: "Midrand",
     description: "Strategically positioned between Johannesburg and Pretoria, Midrand's booming business parks and estates trust Century Doors for all their entrance security needs.",
+    suburbs: ["Halfway House", "Carlswald", "Glen Austin", "Vorna Valley", "Noordwyk", "Commercia", "Randjespark", "Blue Hills", "Kyalami"],
   },
   centurion: {
     name: "Centurion",
     description: "Century Doors extends its reach to Centurion with full-service roller shutter, garage door, and sectional door solutions. Quality workmanship with rapid response times.",
+    suburbs: ["Centurion Central", "Eldoraigne", "Wierdapark", "Zwartkop", "Lyttleton", "The Reeds", "Rooihuiskraal", "Irene", "Highveld"],
   },
 };
 
