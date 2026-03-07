@@ -129,6 +129,31 @@ const AreaPage = () => {
         </div>
       </section>
 
+      {/* Suburbs SEO Section */}
+      <section className="py-16 bg-secondary">
+        <div className="container max-w-4xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="font-display text-2xl font-bold text-secondary-foreground mb-3">
+              Suburbs We Serve in {area.name}
+            </h2>
+            <p className="font-body text-secondary-foreground/70 mb-8">
+              Century Doors provides roller shutter installation, garage door fitting, sectional door supply, and emergency repairs across these {area.name} suburbs:
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {area.suburbs.map((suburb) => (
+                <div
+                  key={suburb}
+                  className="flex items-center gap-2 bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-full px-5 py-2.5"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-primary" />
+                  <span className="font-body text-sm text-secondary-foreground">{suburb}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
       <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
     </div>
