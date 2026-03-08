@@ -15,6 +15,7 @@ const Index = () => {
       <HeroSection onQuoteClick={() => setQuoteOpen(true)} />
       <ServicesSection />
       <AreasSection />
+      <TestimonialsSection />
       <Footer />
       <QuoteDialog open={quoteOpen} onOpenChange={setQuoteOpen} />
     </div>
