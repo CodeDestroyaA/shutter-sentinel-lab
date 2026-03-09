@@ -39,6 +39,9 @@ const areaGroups = [
       { label: "Sandton", href: "/areas/sandton" },
       { label: "Midrand", href: "/areas/midrand" },
       { label: "Centurion", href: "/areas/centurion" },
+      { label: "Johannesburg", href: "/areas/johannesburg" },
+      { label: "Pomona", href: "/areas/pomona" },
+      { label: "Germiston", href: "/areas/germiston" },
     ],
   },
 ];

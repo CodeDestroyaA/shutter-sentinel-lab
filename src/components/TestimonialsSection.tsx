@@ -23,7 +23,7 @@ const testimonials = [
   {
     name: "Thandi Sithole",
     location: "Midrand",
-    text: "From quote to installation it took less than a week. The aluminium garage door looks fantastic and the motor is whisper-quiet. Five stars all round.",
+    text: "From quote to installation it took less than a week. The aluminium roller shutter looks fantastic and the motor is whisper-quiet. Five stars all round.",
     rating: 5,
   },
 ];

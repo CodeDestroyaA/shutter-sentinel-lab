@@ -35,7 +35,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
           </h1>
 
           <p className="font-body text-lg md:text-xl text-secondary-foreground/70 max-w-xl mb-10 leading-relaxed">
-            Industrial and residential entrance solution specialists — roller shutters, garage doors, and sectional doors. Tough as steel, with a neighbourly touch across Gauteng.
+            Industrial and residential entrance solution specialists — roller shutter doors, and sectional doors. Tough as steel, with a neighbourly touch across the East Rand and greater Gauteng.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
