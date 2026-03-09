@@ -53,7 +53,7 @@ const Header = ({ onQuoteClick }: HeaderProps) => {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
           <span className="font-display text-2xl md:text-3xl font-bold text-secondary-foreground tracking-wider">
-            CENTURY <span className="text-primary">DOORS</span>
+            CENTURY <span className="text-primary">ROLLER SHUTTER DOORS</span>
           </span>
         </Link>
 
