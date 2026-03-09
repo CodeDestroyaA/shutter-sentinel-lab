@@ -25,7 +25,7 @@ const HeroSection = ({ onQuoteClick }: HeroSectionProps) => {
         >
           <div className="flex items-center gap-3 mb-6">
             <Shield className="w-5 h-5 text-primary" />
-            <span className="font-display text-sm tracking-[0.3em] text-primary">GAUTENG'S ENTRANCE SOLUTION SPECIALISTS</span>
+            <span className="font-display text-sm tracking-[0.3em] text-primary">GAUTENG'S INDUSTRIAL &amp; COMMERCIAL DOOR SPECIALISTS</span>
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] mb-6">
