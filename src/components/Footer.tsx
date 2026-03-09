@@ -9,10 +9,10 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <span className="font-display text-2xl font-bold text-secondary-foreground tracking-wider">
-              CENTURY <span className="text-primary">DOORS</span>
+              CENTURY <span className="text-primary">ROLLER SHUTTER DOORS</span>
             </span>
             <p className="font-body text-secondary-foreground/60 mt-4 leading-relaxed">
-              Century Doors: South Africa's premier choice for industrial and residential entrance solutions. Serving Gauteng with 24/7 reliability.
+              Century Roller Shutter Doors: South Africa's premier choice for industrial and residential entrance solutions. Serving the East Rand and greater Gauteng with 24/7 reliability.
             </p>
           </div>
 
@@ -23,8 +23,8 @@ const Footer = () => {
               {[
                 { label: "Home", href: "/" },
                 { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
-                { label: "Repairs & Maintenance", href: "/services/repairs" },
-                { label: "Garage Doors", href: "/services/garage-doors" },
+                { label: "Roller Shutter Repairs", href: "/services/roller-shutter-repairs" },
+                { label: "Roller Shutter Maintenance", href: "/services/roller-shutter-maintenance" },
                 { label: "Sectional Doors", href: "/services/sectional-doors" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "Contact", href: "/contact" },
@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/10 pt-8 text-center">
           <p className="font-body text-sm text-secondary-foreground/40">
-            © 2026 Century Doors. All Rights Reserved.
+            © 2026 Century Roller Shutter Doors. All Rights Reserved.
           </p>
         </div>
       </div>

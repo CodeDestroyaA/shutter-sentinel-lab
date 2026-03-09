@@ -12,7 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 const serviceData: Record<string, { title: string; description: string; details: string[]; faqs: { q: string; a: string }[] }> = {
   "roller-shutters": {
     title: "Roller Shutter Installations",
-    description: "High-grade steel and aluminium options tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties across Gauteng.",
+    description: "High-grade steel and aluminium roller shutter doors tailored to your exact dimensions. Custom-fit, heavy-duty security for shopfronts, warehouses, and residential properties across the East Rand and greater Gauteng.",
     details: [
       "Custom measurements and fabrication",
       "Steel and aluminium options available",
@@ -25,39 +25,39 @@ const serviceData: Record<string, { title: string; description: string; details:
       { q: "Do you offer motorised roller shutters?", a: "Yes, we install both manual and motorised systems. Motorised options include remote control and smartphone integration." },
     ],
   },
-  repairs: {
-    title: "Shutter Repairs & Maintenance",
-    description: "Emergency repairs to ensure your property is never left vulnerable. Quick fixes for jammed, rusted, or noisy shutters to keep your day moving smoothly.",
+  "roller-shutter-repairs": {
+    title: "Roller Shutter Repairs",
+    description: "Emergency roller shutter repairs to ensure your property is never left vulnerable. Quick fixes for jammed, rusted, or noisy shutters to keep your business or home secure.",
     details: [
-      "Emergency after-hours service",
+      "Emergency after-hours repair service",
       "Spring and motor replacements",
       "Rust treatment and panel repairs",
-      "Preventive maintenance programs",
-      "All brands serviced",
+      "Track realignment and lubrication",
+      "All roller shutter brands serviced",
     ],
     faqs: [
       { q: "Do you offer emergency after-hours repairs?", a: "Yes, we understand security can't wait. Contact us for urgent assistance any time." },
-      { q: "How often should I service my roller shutter?", a: "We recommend annual maintenance to prevent costly breakdowns and extend the lifespan of your shutter." },
+      { q: "How quickly can you respond to an emergency call?", a: "We aim to be on-site within 2-4 hours for emergency calls in the East Rand area." },
     ],
   },
-  "garage-doors": {
-    title: "Garage Door Installation",
-    description: "Professional garage door installations for residential and commercial properties. We supply and fit tip-up, roll-up, and fully automated garage doors built to last.",
+  "roller-shutter-maintenance": {
+    title: "Roller Shutter Maintenance",
+    description: "Preventive maintenance programs designed to extend roller shutter lifespan, reduce costly breakdowns, and keep your property secure year-round across Gauteng.",
     details: [
-      "Tip-up and roll-up door options",
-      "Automated opener installation",
-      "Steel, aluminium, and wooden finishes",
-      "Insulated options for energy efficiency",
-      "Full warranty and after-sales support",
+      "Scheduled preventive maintenance plans",
+      "Full mechanical and electrical inspections",
+      "Lubrication and tension adjustments",
+      "Safety compliance checks",
+      "Detailed maintenance reports",
     ],
     faqs: [
-      { q: "What types of garage doors do you install?", a: "We install tip-up, roll-up, and sectional garage doors in steel, aluminium, and wood finishes." },
-      { q: "Can you automate my existing garage door?", a: "In most cases, yes. We'll assess your current door and recommend the best motor and automation solution." },
+      { q: "How often should I service my roller shutter?", a: "We recommend bi-annual maintenance for residential shutters and quarterly servicing for high-traffic commercial installations." },
+      { q: "Do you offer maintenance contracts?", a: "Yes, we offer annual maintenance contracts with priority scheduling and discounted rates." },
     ],
   },
   "sectional-doors": {
     title: "Sectional Doors Installation",
-    description: "Insulated sectional overhead doors ideal for warehouses, showrooms, and residential garages. Space-saving vertical operation with excellent thermal performance.",
+    description: "Insulated sectional overhead doors ideal for warehouses, showrooms, and residential properties. Space-saving vertical operation with excellent thermal performance.",
     details: [
       "Insulated sandwich panel construction",
       "Vertical lift, standard lift, or high lift options",

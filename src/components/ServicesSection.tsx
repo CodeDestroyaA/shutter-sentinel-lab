@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Lock, Wrench, DoorOpen, Layers } from "lucide-react";
+import { ArrowRight, Lock, Wrench, Settings, Layers } from "lucide-react";
 
 const services = [
   {
@@ -11,15 +11,15 @@ const services = [
   },
   {
     icon: Wrench,
-    title: "Repairs & Maintenance",
+    title: "Roller Shutter Repairs",
     description: "Quick fixes for jammed, rusted, or noisy shutters. Emergency service available when security can't wait.",
-    href: "/services/repairs",
+    href: "/services/roller-shutter-repairs",
   },
   {
-    icon: DoorOpen,
-    title: "Garage Door Installation",
-    description: "Professional garage door installations for residential and commercial properties. Tip-up, roll-up, and automated options.",
-    href: "/services/garage-doors",
+    icon: Settings,
+    title: "Roller Shutter Maintenance",
+    description: "Preventive maintenance programs to extend shutter lifespan, reduce breakdowns, and keep your property secure year-round.",
+    href: "/services/roller-shutter-maintenance",
   },
   {
     icon: Layers,

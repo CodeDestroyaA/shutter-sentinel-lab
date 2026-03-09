@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
 interface QuoteDialogProps {
@@ -14,6 +16,13 @@ interface QuoteDialogProps {
 const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const [propertyType, setPropertyType] = useState<string[]>([]);
+
+  const togglePropertyType = (type: string) => {
+    setPropertyType((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,6 +30,7 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
     setTimeout(() => {
       setLoading(false);
       onOpenChange(false);
+      setPropertyType([]);
       toast({
         title: "Quote Request Sent!",
         description: "We'll get back to you within 24 hours.",
@@ -42,14 +52,36 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
           <Input name="name" placeholder="Your Name" required maxLength={100} className="font-body" />
           <Input name="phone" type="tel" placeholder="Phone Number" required className="font-body" />
 
+          <div className="space-y-2">
+            <Label className="font-display text-sm tracking-wider">Property Type</Label>
+            <div className="flex gap-6">
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id="residential"
+                  checked={propertyType.includes("residential")}
+                  onCheckedChange={() => togglePropertyType("residential")}
+                />
+                <Label htmlFor="residential" className="font-body text-sm cursor-pointer">Residential</Label>
+              </div>
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  id="commercial"
+                  checked={propertyType.includes("commercial")}
+                  onCheckedChange={() => togglePropertyType("commercial")}
+                />
+                <Label htmlFor="commercial" className="font-body text-sm cursor-pointer">Commercial</Label>
+              </div>
+            </div>
+          </div>
+
           <Select name="service" required>
             <SelectTrigger className="font-body">
               <SelectValue placeholder="Service Required" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="shutter-install">Roller Shutter Install</SelectItem>
-              <SelectItem value="shutter-repair">Shutter Repair</SelectItem>
-              <SelectItem value="garage-door">Garage Door Install</SelectItem>
+              <SelectItem value="shutter-repair">Roller Shutter Repair</SelectItem>
+              <SelectItem value="shutter-maintenance">Roller Shutter Maintenance</SelectItem>
               <SelectItem value="sectional-door">Sectional Door Install</SelectItem>
             </SelectContent>
           </Select>
@@ -70,6 +102,9 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <SelectItem value="sandton">Sandton</SelectItem>
               <SelectItem value="midrand">Midrand</SelectItem>
               <SelectItem value="centurion">Centurion</SelectItem>
+              <SelectItem value="johannesburg">Johannesburg</SelectItem>
+              <SelectItem value="pomona">Pomona</SelectItem>
+              <SelectItem value="germiston">Germiston</SelectItem>
               <SelectItem value="other">Other</SelectItem>
             </SelectContent>
           </Select>

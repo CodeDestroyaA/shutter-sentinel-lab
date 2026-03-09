@@ -9,8 +9,8 @@ interface HeaderProps {
 
 const serviceItems = [
   { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
-  { label: "Repairs & Maintenance", href: "/services/repairs" },
-  { label: "Garage Door Installation", href: "/services/garage-doors" },
+  { label: "Roller Shutter Repairs", href: "/services/roller-shutter-repairs" },
+  { label: "Roller Shutter Maintenance", href: "/services/roller-shutter-maintenance" },
   { label: "Sectional Doors Installation", href: "/services/sectional-doors" },
 ];
 
@@ -39,6 +39,9 @@ const areaGroups = [
       { label: "Sandton", href: "/areas/sandton" },
       { label: "Midrand", href: "/areas/midrand" },
       { label: "Centurion", href: "/areas/centurion" },
+      { label: "Johannesburg", href: "/areas/johannesburg" },
+      { label: "Pomona", href: "/areas/pomona" },
+      { label: "Germiston", href: "/areas/germiston" },
     ],
   },
 ];
@@ -53,7 +56,7 @@ const Header = ({ onQuoteClick }: HeaderProps) => {
       <div className="container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center gap-2">
           <span className="font-display text-2xl md:text-3xl font-bold text-secondary-foreground tracking-wider">
-            CENTURY <span className="text-primary">DOORS</span>
+            CENTURY <span className="text-primary">ROLLER SHUTTER DOORS</span>
           </span>
         </Link>
 
