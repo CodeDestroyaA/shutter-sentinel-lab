@@ -17,7 +17,7 @@ const testimonials = [
   {
     name: "Willem du Plessis",
     location: "Centurion",
-    text: "Had an old garage door that kept jamming. Century Doors replaced it with a modern automated door — the difference is night and day. Great after-sales support too.",
+    text: "Had an old roller shutter that kept jamming. Century Roller Shutter Doors replaced it with a modern motorised unit — the difference is night and day. Great after-sales support too.",
     rating: 5,
   },
   {
