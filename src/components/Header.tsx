@@ -9,8 +9,8 @@ interface HeaderProps {
 
 const serviceItems = [
   { label: "Roller Shutter Installation", href: "/services/roller-shutters" },
-  { label: "Repairs & Maintenance", href: "/services/repairs" },
-  { label: "Garage Door Installation", href: "/services/garage-doors" },
+  { label: "Roller Shutter Repairs", href: "/services/roller-shutter-repairs" },
+  { label: "Roller Shutter Maintenance", href: "/services/roller-shutter-maintenance" },
   { label: "Sectional Doors Installation", href: "/services/sectional-doors" },
 ];
 
