@@ -105,6 +105,9 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <SelectItem value="johannesburg">Johannesburg</SelectItem>
               <SelectItem value="pomona">Pomona</SelectItem>
               <SelectItem value="germiston">Germiston</SelectItem>
+              <SelectItem value="chloorkop">Chloorkop</SelectItem>
+              <SelectItem value="brentwood">Brentwood</SelectItem>
+              <SelectItem value="beyers-park">Beyers Park</SelectItem>
               <SelectItem value="other">Other</SelectItem>
             </SelectContent>
           </Select>
