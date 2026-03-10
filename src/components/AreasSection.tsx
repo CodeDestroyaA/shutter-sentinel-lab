@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-const areas = ["Kempton Park", "Isando", "Jet Park", "Spartan", "Edenvale", "Bedfordview", "Benoni", "Boksburg", "Sandton", "Midrand", "Centurion", "Johannesburg", "Pomona", "Germiston"];
+const areas = ["Kempton Park", "Isando", "Jet Park", "Spartan", "Edenvale", "Bedfordview", "Benoni", "Boksburg", "Sandton", "Midrand", "Centurion", "Johannesburg", "Pomona", "Germiston", "Chloorkop", "Brentwood", "Beyers Park"];
 
 const AreasSection = () => {
   return (
