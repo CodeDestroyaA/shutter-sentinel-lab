@@ -16,13 +16,7 @@ interface QuoteDialogProps {
 const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [propertyType, setPropertyType] = useState<string[]>([]);
-
-  const togglePropertyType = (type: string) => {
-    setPropertyType((prev) =>
-      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
-    );
-  };
+  const [propertyType, setPropertyType] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
