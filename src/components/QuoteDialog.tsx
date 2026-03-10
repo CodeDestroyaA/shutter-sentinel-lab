@@ -16,13 +16,7 @@ interface QuoteDialogProps {
 const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [propertyType, setPropertyType] = useState<string[]>([]);
-
-  const togglePropertyType = (type: string) => {
-    setPropertyType((prev) =>
-      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
-    );
-  };
+  const [propertyType, setPropertyType] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,10 +24,10 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
     setTimeout(() => {
       setLoading(false);
       onOpenChange(false);
-      setPropertyType([]);
+      setPropertyType("");
       toast({
-        title: "Quote Request Sent!",
-        description: "We'll get back to you within 24 hours.",
+        title: "Quote Request Sent! ✅",
+        description: "Thank you! We'll get back to you within 24 hours.",
       });
     }, 1000);
   };
@@ -58,16 +52,16 @@ const QuoteDialog = ({ open, onOpenChange }: QuoteDialogProps) => {
               <div className="flex items-center gap-2">
                 <Checkbox
                   id="residential"
-                  checked={propertyType.includes("residential")}
-                  onCheckedChange={() => togglePropertyType("residential")}
+                  checked={propertyType === "residential"}
+                  onCheckedChange={() => setPropertyType(propertyType === "residential" ? "" : "residential")}
                 />
                 <Label htmlFor="residential" className="font-body text-sm cursor-pointer">Residential</Label>
               </div>
               <div className="flex items-center gap-2">
                 <Checkbox
                   id="commercial"
-                  checked={propertyType.includes("commercial")}
-                  onCheckedChange={() => togglePropertyType("commercial")}
+                  checked={propertyType === "commercial"}
+                  onCheckedChange={() => setPropertyType(propertyType === "commercial" ? "" : "commercial")}
                 />
                 <Label htmlFor="commercial" className="font-body text-sm cursor-pointer">Commercial</Label>
               </div>

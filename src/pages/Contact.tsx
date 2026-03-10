@@ -2,11 +2,22 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteDialog from "@/components/QuoteDialog";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [propertyType, setPropertyType] = useState<string>("");
+  const { toast } = useToast();
 
   const info = [
     { icon: MapPin, label: "Location", value: "Serving Gauteng — East Rand & Beyond" },
@@ -14,6 +25,20 @@ const Contact = () => {
     { icon: Mail, label: "Email", value: "info@centurydoors.co.za", href: "mailto:info@centurydoors.co.za" },
     { icon: Clock, label: "Hours", value: "Mon–Fri 7am–5pm, Sat 8am–1pm" },
   ];
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+      setPropertyType("");
+      toast({
+        title: "Message Sent! ✅",
+        description: "Thank you for reaching out. We'll respond within 24 hours.",
+      });
+    }, 1000);
+  };
 
   return (
     <div className="min-h-screen">
@@ -31,33 +56,139 @@ const Contact = () => {
       </section>
 
       <section className="py-20 bg-background">
-        <div className="container max-w-3xl">
-          <div className="grid sm:grid-cols-2 gap-8">
-            {info.map((item, i) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4 p-6 bg-card rounded-lg border border-border"
-                style={{ boxShadow: "var(--shadow-card)" }}
-              >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="w-5 h-5 text-primary" />
+        <div className="container max-w-5xl">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <h2 className="font-display text-2xl font-bold text-foreground tracking-wider">Get In Touch</h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                {info.map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-4 p-5 bg-card rounded-lg border border-border"
+                    style={{ boxShadow: "var(--shadow-card)" }}
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-sm tracking-wider text-foreground mb-1">{item.label}</h3>
+                      {item.href ? (
+                        <a href={item.href} className="font-body text-muted-foreground hover:text-primary transition-colors">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="font-body text-muted-foreground">{item.value}</p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-card rounded-lg border border-border p-8"
+              style={{ boxShadow: "var(--shadow-card)" }}
+            >
+              {submitted ? (
+                <div className="flex flex-col items-center justify-center text-center py-12 space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <CheckCircle className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-foreground tracking-wider">Message Sent!</h3>
+                  <p className="font-body text-muted-foreground max-w-sm">
+                    Thank you for reaching out. Our team will get back to you within 24 hours.
+                  </p>
+                  <Button onClick={() => setSubmitted(false)} variant="outline" className="font-display tracking-wider mt-4">
+                    Send Another Message
+                  </Button>
                 </div>
-                <div>
-                  <h3 className="font-display text-sm tracking-wider text-foreground mb-1">{item.label}</h3>
-                  {item.href ? (
-                    <a href={item.href} className="font-body text-muted-foreground hover:text-primary transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="font-body text-muted-foreground">{item.value}</p>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+              ) : (
+                <>
+                  <h2 className="font-display text-2xl font-bold text-foreground tracking-wider mb-6">Send Us a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <Input name="name" placeholder="Your Name" required maxLength={100} className="font-body" />
+                    <Input name="phone" type="tel" placeholder="Phone Number" required className="font-body" />
+                    <Input name="email" type="email" placeholder="Email Address" className="font-body" />
+
+                    <div className="space-y-2">
+                      <Label className="font-display text-sm tracking-wider">Property Type</Label>
+                      <div className="flex gap-6">
+                        <div className="flex items-center gap-2">
+                          <Checkbox
+                            id="contact-residential"
+                            checked={propertyType === "residential"}
+                            onCheckedChange={() => setPropertyType(propertyType === "residential" ? "" : "residential")}
+                          />
+                          <Label htmlFor="contact-residential" className="font-body text-sm cursor-pointer">Residential</Label>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Checkbox
+                            id="contact-commercial"
+                            checked={propertyType === "commercial"}
+                            onCheckedChange={() => setPropertyType(propertyType === "commercial" ? "" : "commercial")}
+                          />
+                          <Label htmlFor="contact-commercial" className="font-body text-sm cursor-pointer">Commercial</Label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Select name="service">
+                      <SelectTrigger className="font-body">
+                        <SelectValue placeholder="Service Required" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="shutter-install">Roller Shutter Install</SelectItem>
+                        <SelectItem value="shutter-repair">Roller Shutter Repair</SelectItem>
+                        <SelectItem value="shutter-maintenance">Roller Shutter Maintenance</SelectItem>
+                        <SelectItem value="sectional-door">Sectional Door Install</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Select name="area">
+                      <SelectTrigger className="font-body">
+                        <SelectValue placeholder="Your Area" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="kempton-park">Kempton Park</SelectItem>
+                        <SelectItem value="isando">Isando</SelectItem>
+                        <SelectItem value="jet-park">Jet Park</SelectItem>
+                        <SelectItem value="spartan">Spartan</SelectItem>
+                        <SelectItem value="edenvale">Edenvale</SelectItem>
+                        <SelectItem value="bedfordview">Bedfordview</SelectItem>
+                        <SelectItem value="benoni">Benoni</SelectItem>
+                        <SelectItem value="boksburg">Boksburg</SelectItem>
+                        <SelectItem value="sandton">Sandton</SelectItem>
+                        <SelectItem value="midrand">Midrand</SelectItem>
+                        <SelectItem value="centurion">Centurion</SelectItem>
+                        <SelectItem value="johannesburg">Johannesburg</SelectItem>
+                        <SelectItem value="pomona">Pomona</SelectItem>
+                        <SelectItem value="germiston">Germiston</SelectItem>
+                        <SelectItem value="chloorkop">Chloorkop</SelectItem>
+                        <SelectItem value="brentwood">Brentwood</SelectItem>
+                        <SelectItem value="beyers-park">Beyers Park</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Textarea name="message" placeholder="Briefly describe your needs..." maxLength={1000} rows={4} className="font-body" />
+
+                    <Button type="submit" className="w-full font-display tracking-wider" disabled={loading}>
+                      {loading ? "Sending..." : "Send Message"}
+                    </Button>
+                  </form>
+                </>
+              )}
+            </motion.div>
           </div>
         </div>
       </section>
