@@ -132,8 +132,8 @@ const AreaPage = () => {
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
               {[
                 { href: "/services/roller-shutters", icon: Shield, title: "Roller Shutters", desc: "Custom roller shutter installations for commercial and residential properties." },
-                { href: "/services/repairs", icon: Wrench, title: "Repairs & Maintenance", desc: "Emergency repairs and scheduled maintenance to keep you secure." },
-                { href: "/services/garage-doors", icon: DoorOpen, title: "Garage Doors", desc: "Professional garage door installations — tip-up, roll-up, and automated." },
+                { href: "/services/roller-shutter-repairs", icon: Wrench, title: "Roller Shutter Repairs", desc: "Emergency and scheduled roller shutter repairs to restore security fast." },
+                { href: "/services/roller-shutter-maintenance", icon: Settings, title: "Roller Shutter Maintenance", desc: "Preventative maintenance plans to extend the life of your roller shutters." },
                 { href: "/services/sectional-doors", icon: Layers, title: "Sectional Doors", desc: "Insulated sectional overhead doors for warehouses and homes." },
               ].map((svc) => (
                 <Link

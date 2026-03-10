@@ -22,6 +22,7 @@ const areaGroups = [
       { label: "Isando", href: "/areas/isando" },
       { label: "Jet Park", href: "/areas/jet-park" },
       { label: "Spartan", href: "/areas/spartan" },
+      { label: "Chloorkop", href: "/areas/chloorkop" },
     ],
   },
   {
@@ -31,6 +32,8 @@ const areaGroups = [
       { label: "Bedfordview", href: "/areas/bedfordview" },
       { label: "Benoni", href: "/areas/benoni" },
       { label: "Boksburg", href: "/areas/boksburg" },
+      { label: "Brentwood", href: "/areas/brentwood" },
+      { label: "Beyers Park", href: "/areas/beyers-park" },
     ],
   },
   {
