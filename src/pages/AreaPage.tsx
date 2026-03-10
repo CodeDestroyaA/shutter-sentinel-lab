@@ -51,18 +51,48 @@ const areaData: Record<string, { name: string; description: string; suburbs: str
   },
   sandton: {
     name: "Sandton",
-    description: "Africa's richest square mile deserves Africa's best entrance solutions. Century Doors provides premium installations and maintenance across Sandton's commercial and residential landscape.",
+    description: "Africa's richest square mile deserves Africa's best entrance solutions. Century Roller Shutter Doors provides premium installations and maintenance across Sandton's commercial and residential landscape.",
     suburbs: ["Sandhurst", "Morningside", "Rivonia", "Bryanston", "Fourways", "Lonehill", "Woodmead", "Sunninghill", "Paulshof", "Benmore"],
   },
   midrand: {
     name: "Midrand",
-    description: "Strategically positioned between Johannesburg and Pretoria, Midrand's booming business parks and estates trust Century Doors for all their entrance security needs.",
+    description: "Strategically positioned between Johannesburg and Pretoria, Midrand's booming business parks and estates trust Century Roller Shutter Doors for all their entrance security needs.",
     suburbs: ["Halfway House", "Carlswald", "Glen Austin", "Vorna Valley", "Noordwyk", "Commercia", "Randjespark", "Blue Hills", "Kyalami"],
   },
   centurion: {
     name: "Centurion",
-    description: "Century Doors extends its reach to Centurion with full-service roller shutter, garage door, and sectional door solutions. Quality workmanship with rapid response times.",
+    description: "Century Roller Shutter Doors extends its reach to Centurion with full-service roller shutter and sectional door solutions. Quality workmanship with rapid response times.",
     suburbs: ["Centurion Central", "Eldoraigne", "Wierdapark", "Zwartkop", "Lyttleton", "The Reeds", "Rooihuiskraal", "Irene", "Highveld"],
+  },
+  johannesburg: {
+    name: "Johannesburg",
+    description: "From the CBD to the northern suburbs, Johannesburg businesses and homeowners rely on Century Roller Shutter Doors for robust roller shutter installations, sectional doors, and rapid-response repairs.",
+    suburbs: ["Johannesburg CBD", "Braamfontein", "Randburg", "Roodepoort", "Soweto", "Melville", "Auckland Park", "Parktown", "Fairland", "Northcliff"],
+  },
+  pomona: {
+    name: "Pomona",
+    description: "Pomona's growing residential and commercial precinct trusts Century Roller Shutter Doors for expert roller shutter and sectional door installations with fast turnaround times.",
+    suburbs: ["Pomona AH", "Glen Erasmia", "Serengeti Golf Estate", "Leeuwfontein", "Elandsfontein"],
+  },
+  germiston: {
+    name: "Germiston",
+    description: "As one of the East Rand's busiest industrial centres, Germiston demands heavy-duty entrance solutions. Century Roller Shutter Doors delivers custom roller shutters and sectional doors with rapid-response repairs.",
+    suburbs: ["Germiston Central", "Lambton", "Primrose", "Elsburg", "Delville", "Driehoek", "Wadeville", "Knights", "Castleview"],
+  },
+  chloorkop: {
+    name: "Chloorkop",
+    description: "Chloorkop's industrial parks and warehouses need heavy-duty entrance security. Century Roller Shutter Doors provides tailored roller shutter and sectional door solutions for this thriving logistics hub.",
+    suburbs: ["Chloorkop Industrial", "Olifantsfontein", "Clayville", "Midstream", "Tembisa South"],
+  },
+  brentwood: {
+    name: "Brentwood",
+    description: "Century Roller Shutter Doors serves Brentwood's residential estates and commercial properties with professional roller shutter installations, sectional doors, and reliable maintenance services.",
+    suburbs: ["Brentwood Park", "Brentwood AH", "Lakefield", "Farrarmere", "Northmead"],
+  },
+  "beyers-park": {
+    name: "Beyers Park",
+    description: "Beyers Park residents and businesses trust Century Roller Shutter Doors for secure, professionally installed roller shutters and sectional doors with ongoing maintenance support.",
+    suburbs: ["Beyers Park", "Boksburg East", "Witfield", "Parkrand", "Sunward Park"],
   },
 };
 
