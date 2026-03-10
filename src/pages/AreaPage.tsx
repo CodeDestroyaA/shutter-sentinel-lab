@@ -1,7 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, MapPin, Shield, Wrench, DoorOpen, Layers } from "lucide-react";
+import { ArrowLeft, MapPin, Shield, Wrench, Layers, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
