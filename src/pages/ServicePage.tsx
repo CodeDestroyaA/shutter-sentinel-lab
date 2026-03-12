@@ -8,6 +8,19 @@ import Footer from "@/components/Footer";
 import QuoteDialog from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+import serviceRollerShutters from "@/assets/service-roller-shutters.jpg";
+import serviceRepairs from "@/assets/service-roller-shutter-repairs.jpg";
+import serviceMaintenance from "@/assets/service-roller-shutter-maintenance.jpg";
+import serviceSectional from "@/assets/service-sectional-doors.jpg";
+
+const serviceImages: Record<string, { src: string; alt: string }> = {
+  "roller-shutters": { src: serviceRollerShutters, alt: "Professional roller shutter installation on a commercial warehouse in Gauteng" },
+  "roller-shutter-repairs": { src: serviceRepairs, alt: "Technician repairing roller shutter motor and spring mechanism" },
+  "roller-shutter-maintenance": { src: serviceMaintenance, alt: "Preventive roller shutter maintenance inspection and lubrication" },
+  "sectional-doors": { src: serviceSectional, alt: "Insulated sectional overhead door installed on a warehouse" },
+};
 
 const serviceData: Record<string, { title: string; description: string; details: string[]; faqs: { q: string; a: string }[] }> = {
   "roller-shutters": {
@@ -77,6 +90,7 @@ const ServicePage = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
 
   const service = slug ? serviceData[slug] : undefined;
+  const image = slug ? serviceImages[slug] : undefined;
   if (!service) return <Navigate to="/" replace />;
 
   return (
@@ -94,6 +108,26 @@ const ServicePage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Service Image */}
+      {image && (
+        <section className="bg-background">
+          <div className="container max-w-4xl py-12">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg border border-border">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={1280}
+                  height={720}
+                />
+              </AspectRatio>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       <section className="py-20 bg-background">
         <div className="container max-w-4xl">
