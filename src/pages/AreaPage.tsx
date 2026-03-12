@@ -7,6 +7,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteDialog from "@/components/QuoteDialog";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+import areaDefaultImage from "@/assets/area-default.jpg";
 
 const areaData: Record<string, { name: string; description: string; suburbs: string[] }> = {
   "kempton-park": {
@@ -121,6 +124,24 @@ const AreaPage = () => {
               Entrance Solutions in {area.name}
             </h1>
             <p className="font-body text-lg text-secondary-foreground/70 max-w-2xl leading-relaxed">{area.description}</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Area Image */}
+      <section className="bg-background">
+        <div className="container max-w-4xl py-12">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg border border-border">
+              <img
+                src={areaDefaultImage}
+                alt={`Roller shutter doors and entrance solutions in ${area.name}, Gauteng`}
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
+            </AspectRatio>
           </motion.div>
         </div>
       </section>

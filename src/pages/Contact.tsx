@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [quoteOpen, setQuoteOpen] = useState(false);
@@ -26,18 +27,35 @@ const Contact = () => {
     { icon: Clock, label: "Hours", value: "Mon–Fri 7am–5pm, Sat 8am–1pm" },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      setPropertyType("");
-      toast({
-        title: "Message Sent! ✅",
-        description: "Thank you for reaching out. We'll respond within 24 hours.",
-      });
-    }, 1000);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      email: formData.get("email") as string,
+      propertyType,
+      service: formData.get("service") as string,
+      area: formData.get("area") as string,
+      message: formData.get("message") as string,
+      formType: "contact",
+    };
+
+    try {
+      await supabase.functions.invoke("send-form-email", { body: payload });
+    } catch (err) {
+      console.error("Email send error:", err);
+    }
+
+    setLoading(false);
+    setSubmitted(true);
+    setPropertyType("");
+    toast({
+      title: "Message Sent! ✅",
+      description: "Thank you for reaching out. We'll respond within 24 hours.",
+    });
   };
 
   return (
@@ -58,7 +76,6 @@ const Contact = () => {
       <section className="py-20 bg-background">
         <div className="container max-w-5xl">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <div className="space-y-6">
               <h2 className="font-display text-2xl font-bold text-foreground tracking-wider">Get In Touch</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
@@ -90,7 +107,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
