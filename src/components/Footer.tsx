@@ -27,6 +27,7 @@ const Footer = () => {
                 { label: "Roller Shutter Maintenance", href: "/services/roller-shutter-maintenance" },
                 { label: "Sectional Doors", href: "/services/sectional-doors" },
                 { label: "Gallery", href: "/gallery" },
+                { label: "Blog", href: "/blog" },
                 { label: "Contact", href: "/contact" },
               ].map((link) => (
                 <Link key={link.href} to={link.href} className="font-body text-secondary-foreground/60 hover:text-primary transition-colors">
