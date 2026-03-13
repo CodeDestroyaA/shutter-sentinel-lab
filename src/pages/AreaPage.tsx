@@ -152,14 +152,14 @@ const AreaPage = () => {
             <h2 className="font-display text-2xl font-bold text-foreground mb-8">Our Services in {area.name}</h2>
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
               {[
-                { href: "/services/roller-shutters", icon: Shield, title: "Roller Shutters", desc: "Custom roller shutter installations for commercial and residential properties." },
-                { href: "/services/roller-shutter-repairs", icon: Wrench, title: "Roller Shutter Repairs", desc: "Emergency and scheduled roller shutter repairs to restore security fast." },
-                { href: "/services/roller-shutter-maintenance", icon: Settings, title: "Roller Shutter Maintenance", desc: "Preventative maintenance plans to extend the life of your roller shutters." },
-                { href: "/services/sectional-doors", icon: Layers, title: "Sectional Doors", desc: "Insulated sectional overhead doors for warehouses and homes." },
+                { slug: "roller-shutters", icon: Shield, title: "Roller Shutters", desc: "Custom roller shutter installations for commercial and residential properties." },
+                { slug: "roller-shutter-repairs", icon: Wrench, title: "Roller Shutter Repairs", desc: "Emergency and scheduled roller shutter repairs to restore security fast." },
+                { slug: "roller-shutter-maintenance", icon: Settings, title: "Roller Shutter Maintenance", desc: "Preventative maintenance plans to extend the life of your roller shutters." },
+                { slug: "sectional-doors", icon: Layers, title: "Sectional Doors", desc: "Insulated sectional overhead doors for warehouses and homes." },
               ].map((svc) => (
                 <Link
-                  key={svc.href}
-                  to={svc.href}
+                  key={svc.slug}
+                  to={`/areas/${slug}/${svc.slug}`}
                   className="group flex items-start gap-4 p-6 bg-card rounded-lg border border-border hover:border-primary/50 transition-all"
                   style={{ boxShadow: "var(--shadow-card)" }}
                 >
@@ -167,7 +167,7 @@ const AreaPage = () => {
                     <svc.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-card-foreground mb-1">{svc.title}</h3>
+                    <h3 className="font-display text-lg font-semibold text-card-foreground mb-1">{svc.title} in {area.name}</h3>
                     <p className="font-body text-sm text-muted-foreground">{svc.desc}</p>
                   </div>
                 </Link>
